@@ -3,13 +3,13 @@ package com.vat.xcart.controller;
 import com.vat.xcart.entity.Product;
 import com.vat.xcart.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
+@CrossOrigin("*")
 public class ProductController
 {
 
@@ -30,4 +30,20 @@ public class ProductController
     public Product getProductById(String id){
         return productService.getItemById(id);
     }
+
+    @GetMapping(path = "/getproducts")
+    public ResponseEntity<List<Product>> getProducts() {
+        return productService.getProductsFromDB();
+    }
+
+    @GetMapping(path = "/getcategories")
+    public ResponseEntity<String> getCategories() {
+        return productService.getProductCategoriesFromDB();
+    }
+
+    @PostMapping(path = "addproduct")
+    public ResponseEntity<String> addProducts(@RequestBody List<Product> products) {
+        return productService.addProducts(products);
+    }
+
 }

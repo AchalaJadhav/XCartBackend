@@ -7,68 +7,68 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "placed_order_address")
 public class PlacedOrderAddress {
 
-	@Id
-	private String id;
+    @Id
+    private String id;
 
-	private String state;
+    private String state;
 
-	private String city;
+    private String city;
 
-	private String postalCode;
+    private String postalCode;
 
-	private String addressLine;
+    private String addressLine;
 
-	private int orderNumber;
+    private int orderNumber;
 
 //	@OneToOne
 //	private OrderPlaced orderPlaced;
 
-	public String getId() {
-		return id;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public String getState() {
-		return state;
-	}
+    public String getState() {
+        return state;
+    }
 
-	public void setState(String state) {
-		this.state = state;
-	}
+    public void setState(String state) {
+        this.state = state;
+    }
 
-	public String getCity() {
-		return city;
-	}
+    public String getCity() {
+        return city;
+    }
 
-	public void setCity(String city) {
-		this.city = city;
-	}
+    public void setCity(String city) {
+        this.city = city;
+    }
 
-	public String getPostalCode() {
-		return postalCode;
-	}
+    public String getPostalCode() {
+        return postalCode;
+    }
 
-	public void setPostalCode(String postalCode) {
-		this.postalCode = postalCode;
-	}
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
 
-	public String getAddressLine() {
-		return addressLine;
-	}
+    public String getAddressLine() {
+        return addressLine;
+    }
 
-	public void setAddressLine(String addressLine) {
-		this.addressLine = addressLine;
-	}
+    public void setAddressLine(String addressLine) {
+        this.addressLine = addressLine;
+    }
 
-	public int getOrderNumber() {
-		return orderNumber;
-	}
+    public int getOrderNumber() {
+        return orderNumber;
+    }
 
-	public void setOrderNumber(int orderNumber) {
-		this.orderNumber = orderNumber;
-	}
+    public void setOrderNumber(int orderNumber) {
+        this.orderNumber = orderNumber;
+    }
 
 }

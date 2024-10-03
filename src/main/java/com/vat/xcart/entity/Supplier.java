@@ -7,25 +7,25 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "supplier")
 public class Supplier {
 
-	@Id
-	private int supplierId;
+    @Id
+    private int supplierId;
 
-	private String supplierName;
+    private String supplierName;
 
-	public int getSupplierId() {
-		return supplierId;
-	}
+    public int getSupplierId() {
+        return supplierId;
+    }
 
-	public void setSupplierId(int supplierId) {
-		this.supplierId = supplierId;
-	}
+    public void setSupplierId(int supplierId) {
+        this.supplierId = supplierId;
+    }
 
-	public String getSupplierName() {
-		return supplierName;
-	}
+    public String getSupplierName() {
+        return supplierName;
+    }
 
-	public void setSupplierName(String supplierName) {
-		this.supplierName = supplierName;
-	}
+    public void setSupplierName(String supplierName) {
+        this.supplierName = supplierName;
+    }
 
 }

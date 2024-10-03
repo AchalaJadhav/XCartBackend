@@ -1,6 +1,5 @@
 package com.vat.xcart.constant;
 
-public enum Status
-{
+public enum Status {
     ACTIVE, INACTIVE, SUSPENDED
 }

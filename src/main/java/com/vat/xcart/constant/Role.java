@@ -1,6 +1,5 @@
 package com.vat.xcart.constant;
 
-public enum Role
-{
+public enum Role {
     ADMIN, USER, GUEST
 }

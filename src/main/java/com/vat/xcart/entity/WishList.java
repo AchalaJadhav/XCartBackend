@@ -7,35 +7,35 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "wish_list")
 public class WishList {
 
-	@Id
-	private String id;
-	
-	private int userId;
-	
-	private int productId;
+    @Id
+    private String id;
 
-	public String getId() {
-		return id;
-	}
+    private int userId;
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    private int productId;
 
-	public int getUserId() {
-		return userId;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public int getProductId() {
-		return productId;
-	}
+    public int getUserId() {
+        return userId;
+    }
 
-	public void setProductId(int productId) {
-		this.productId = productId;
-	}
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
 
 }

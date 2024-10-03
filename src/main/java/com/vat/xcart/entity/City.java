@@ -7,38 +7,38 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "city")
 public class City {
 
-	@Id
-	private String id;
+    @Id
+    private String id;
 
-	private int stateId;
+    private int stateId;
 
-	private String cityName;
+    private String cityName;
 
 //	@ManyToOne
 //	private States state;
 
-	public String getCityId() {
-		return id;
-	}
+    public String getCityId() {
+        return id;
+    }
 
-	public void setCityId(String id) {
-		this.id = id;
-	}
+    public void setCityId(String id) {
+        this.id = id;
+    }
 
-	public int getStateId() {
-		return stateId;
-	}
+    public int getStateId() {
+        return stateId;
+    }
 
-	public void setStateId(int stateId) {
-		this.stateId = stateId;
-	}
+    public void setStateId(int stateId) {
+        this.stateId = stateId;
+    }
 
-	public String getCityName() {
-		return cityName;
-	}
+    public String getCityName() {
+        return cityName;
+    }
 
-	public void setCityName(String cityName) {
-		this.cityName = cityName;
-	}
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
 
 }

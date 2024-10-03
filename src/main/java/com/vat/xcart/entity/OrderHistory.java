@@ -8,146 +8,146 @@ import java.time.LocalDateTime;
 @Document(collection = "order_history")
 public class OrderHistory {
 
-	@Id
-	private String id;
-	
-	private int userId;
-	
-	private int orderNumber;
-	
-	private int productId;
-	
-	private String productName;
-	
-	private String customerName;
-	
-	private float price;
-	
-	private LocalDateTime deliveryDate;
-	
-	private String path;
-	
-	private float totalAmount;
-	
-	private int quantity;
-	
-	private String orderStatus;
-	
-	private String deliveryAddress;
-	
-	private String modeOfPayment;
+    @Id
+    private String id;
 
-	public String getId() {
-		return id;
-	}
+    private int userId;
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    private int orderNumber;
 
-	public int getUserId() {
-		return userId;
-	}
+    private int productId;
 
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
+    private String productName;
 
-	public int getOrderNumber() {
-		return orderNumber;
-	}
+    private String customerName;
 
-	public void setOrderNumber(int orderNumber) {
-		this.orderNumber = orderNumber;
-	}
+    private float price;
 
-	public int getProductId() {
-		return productId;
-	}
+    private LocalDateTime deliveryDate;
 
-	public void setProductId(int productId) {
-		this.productId = productId;
-	}
+    private String path;
 
-	public String getProductName() {
-		return productName;
-	}
+    private float totalAmount;
 
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
+    private int quantity;
 
-	public String getCustomerName() {
-		return customerName;
-	}
+    private String orderStatus;
 
-	public void setCustomerName(String customerName) {
-		this.customerName = customerName;
-	}
+    private String deliveryAddress;
 
-	public float getPrice() {
-		return price;
-	}
+    private String modeOfPayment;
 
-	public void setPrice(float price) {
-		this.price = price;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public LocalDateTime getDeliveryDate() {
-		return deliveryDate;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public void setDeliveryDate(LocalDateTime deliveryDate) {
-		this.deliveryDate = deliveryDate;
-	}
+    public int getUserId() {
+        return userId;
+    }
 
-	public String getPath() {
-		return path;
-	}
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 
-	public void setPath(String path) {
-		this.path = path;
-	}
+    public int getOrderNumber() {
+        return orderNumber;
+    }
 
-	public float getTotalAmount() {
-		return totalAmount;
-	}
+    public void setOrderNumber(int orderNumber) {
+        this.orderNumber = orderNumber;
+    }
 
-	public void setTotalAmount(float totalAmount) {
-		this.totalAmount = totalAmount;
-	}
+    public int getProductId() {
+        return productId;
+    }
 
-	public int getQuantity() {
-		return quantity;
-	}
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
 
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
+    public String getProductName() {
+        return productName;
+    }
 
-	public String getOrderStatus() {
-		return orderStatus;
-	}
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
 
-	public void setOrderStatus(String orderStatus) {
-		this.orderStatus = orderStatus;
-	}
+    public String getCustomerName() {
+        return customerName;
+    }
 
-	public String getDeliveryAddress() {
-		return deliveryAddress;
-	}
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
 
-	public void setDeliveryAddress(String deliveryAddress) {
-		this.deliveryAddress = deliveryAddress;
-	}
+    public float getPrice() {
+        return price;
+    }
 
-	public String getModeOfPayment() {
-		return modeOfPayment;
-	}
+    public void setPrice(float price) {
+        this.price = price;
+    }
 
-	public void setModeOfPayment(String modeOfPayment) {
-		this.modeOfPayment = modeOfPayment;
-	}
-	
-	
+    public LocalDateTime getDeliveryDate() {
+        return deliveryDate;
+    }
+
+    public void setDeliveryDate(LocalDateTime deliveryDate) {
+        this.deliveryDate = deliveryDate;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    public float getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(float totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
+    public String getDeliveryAddress() {
+        return deliveryAddress;
+    }
+
+    public void setDeliveryAddress(String deliveryAddress) {
+        this.deliveryAddress = deliveryAddress;
+    }
+
+    public String getModeOfPayment() {
+        return modeOfPayment;
+    }
+
+    public void setModeOfPayment(String modeOfPayment) {
+        this.modeOfPayment = modeOfPayment;
+    }
+
+
 }

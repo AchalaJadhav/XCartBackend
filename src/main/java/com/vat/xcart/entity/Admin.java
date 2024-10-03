@@ -8,56 +8,56 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "admin")
 public class Admin {
 
-	@Id
-	private String id;
-	
-	private String phone;
-	
-	private String name;
-	
-	private String userName;
-	
-	private String password;
+    @Id
+    private String id;
 
-	public String getAdminEmailId() {
-		return id;
-	}
+    private String phone;
 
-	public void setAdminEmailId(String id) {
-		this.id = id;
-	}
+    private String name;
 
-	public String getPhone() {
-		return phone;
-	}
+    private String userName;
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+    private String password;
 
-	public String getName() {
-		return name;
-	}
+    public String getAdminEmailId() {
+        return id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setAdminEmailId(String id) {
+        this.id = id;
+    }
 
-	public String getUserName() {
-		return userName;
-	}
+    public String getPhone() {
+        return phone;
+    }
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
-	
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+
 }

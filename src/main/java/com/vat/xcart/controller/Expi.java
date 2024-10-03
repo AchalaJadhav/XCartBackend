@@ -4,12 +4,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class Expi
-{
+public class Expi {
 
     @GetMapping("/status")
-    public String getStatus()
-    {
+    public String getStatus() {
         return "running";
     }
 }

@@ -7,28 +7,30 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "product")
 public class Product {
 
-	@Id
-	private String id;
+    @Id
+    private String id;
 
-	private String productName;
+    private String productName;
 
-	private float price;
+    private float price;
 
-	private String productShortDescription;
+    private String productShortDescription;
 
-	private int stock;
+    private int stock;
 
-	private int productDiscount;
+    private int productDiscount;
 
-	private String path;
+    private String path;
 
-	private String category;
+    private String category;
 
-	private String tagLine;
+    private String tagLine;
 
-	private String status;
+    private String status;
 
-	private int quantity;
+    private int quantity;
+
+    private String productId;
 
 //	@ManyToOne
 //	private Cart cart;
@@ -45,93 +47,100 @@ public class Product {
 //	@OneToMany
 //	private List<WishList> wishLists;
 
-	public int getQuantity() {
-		return quantity;
-	}
+    public int getQuantity() {
+        return quantity;
+    }
 
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 
-	
-	public String getId() {
-		return id;
-	}
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public String getProductName() {
-		return productName;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
+    public String getProductName() {
+        return productName;
+    }
 
-	public float getPrice() {
-		return price;
-	}
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
 
-	public void setPrice(float price) {
-		this.price = price;
-	}
+    public float getPrice() {
+        return price;
+    }
 
-	public String getProductShortDescription() {
-		return productShortDescription;
-	}
+    public void setPrice(float price) {
+        this.price = price;
+    }
 
-	public void setProductShortDescription(String productShortDescription) {
-		this.productShortDescription = productShortDescription;
-	}
+    public String getProductShortDescription() {
+        return productShortDescription;
+    }
 
-	public int getStock() {
-		return stock;
-	}
+    public void setProductShortDescription(String productShortDescription) {
+        this.productShortDescription = productShortDescription;
+    }
 
-	public void setStock(int stock) {
-		this.stock = stock;
-	}
+    public int getStock() {
+        return stock;
+    }
 
-	public int getProductDiscount() {
-		return productDiscount;
-	}
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
 
-	public void setProductDiscount(int productDiscount) {
-		this.productDiscount = productDiscount;
-	}
+    public int getProductDiscount() {
+        return productDiscount;
+    }
 
-	public String getPath() {
-		return path;
-	}
+    public void setProductDiscount(int productDiscount) {
+        this.productDiscount = productDiscount;
+    }
 
-	public void setPath(String path) {
-		this.path = path;
-	}
+    public String getPath() {
+        return path;
+    }
 
-	public String getCategory() {
-		return category;
-	}
+    public void setPath(String path) {
+        this.path = path;
+    }
 
-	public void setCategory(String category) {
-		this.category = category;
-	}
+    public String getCategory() {
+        return category;
+    }
 
-	public String getTagLine() {
-		return tagLine;
-	}
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
-	public void setTagLine(String tagLine) {
-		this.tagLine = tagLine;
-	}
+    public String getTagLine() {
+        return tagLine;
+    }
 
-	public String getStatus() {
-		return status;
-	}
+    public void setTagLine(String tagLine) {
+        this.tagLine = tagLine;
+    }
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
+    public String getStatus() {
+        return status;
+    }
 
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
 }

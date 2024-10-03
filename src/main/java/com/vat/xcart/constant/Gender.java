@@ -1,6 +1,5 @@
 package com.vat.xcart.constant;
 
-public enum Gender
-{
+public enum Gender {
     MALE, FEMALE, OTHER
 }
