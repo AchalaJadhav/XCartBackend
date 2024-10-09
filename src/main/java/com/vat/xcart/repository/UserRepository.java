@@ -1,6 +1,6 @@
 package com.vat.xcart.repository;
 
-import com.vat.xcart.entity.User;
+import com.vat.xcart.models.entity.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
