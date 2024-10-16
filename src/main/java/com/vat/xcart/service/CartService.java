@@ -2,18 +2,20 @@ package com.vat.xcart.service;
 
 import com.vat.xcart.exception.ResourceNotFoundException;
 import com.vat.xcart.exception.UserNotFoundException;
+import com.vat.xcart.models.dto.response.CartResponse;
 import com.vat.xcart.models.entity.Cart;
 import com.vat.xcart.models.entity.Product;
 import com.vat.xcart.models.entity.User;
 import com.vat.xcart.models.pojo.CartItem;
+import com.vat.xcart.models.pojo.CartProduct;
 import com.vat.xcart.repository.CartRepository;
 import com.vat.xcart.repository.ProductRepository;
 import com.vat.xcart.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.Collections;
-import java.util.Objects;
-import java.util.Optional;
+
+import java.util.*;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -28,6 +30,8 @@ public class CartService {
     @Autowired
     private ProductRepository productRepository;
 
+    @Autowired
+    private ProductService productService;
     public Cart addToCart(String userId, String productId, int quantity) throws Exception {
         // Check if userId present
         User user = userRepository.findById(userId)
@@ -65,10 +69,45 @@ public class CartService {
             return cartRepository.save(cart);
         }
 
-    public Cart getCartByUserId (String userId) throws Exception {
-        return cartRepository.findByUserId(userId)
+    public CartResponse getCartByUserId(String userId) throws Exception {
+
+        // Retrieve the cart for the given user ID
+        Cart cart = cartRepository.findByUserId(userId)
                 .orElseThrow(() -> new Exception("No cart found for user"));
+
+        // Extract product IDs from the cart items in a single operation
+        List<String> productIds = cart.getItems().stream()
+                .map(CartItem::getProductId)
+                .collect(Collectors.toList());
+
+        // Fetch all products corresponding to the product IDs
+        List<Product> productList = productService.getProductsByIds(productIds);
+
+        // Create a Map of product ID to CartItem for easy lookup of quantities
+        Map<String, Integer> productQuantityMap = cart.getItems().stream()
+                .collect(Collectors.toMap(CartItem::getProductId, CartItem::getQuantity));
+
+        // Create CartResponse by transforming Product list to CartProduct list
+        List<CartProduct> cartProducts = productList.stream().map(product -> {
+            return CartProduct.builder()
+                    .id(product.getId())
+                    .productName(product.getProductName())
+                    .category(product.getCategory())
+                    .productDiscount(product.getProductDiscount())
+                    .path(product.getPath())
+                    .price(product.getPrice())
+                    .productShortDescription(product.getProductShortDescription())
+                    .stock(product.getStock())
+                    .status(product.getStatus())
+                    .tagLine(product.getTagLine())
+                    .quantity(productQuantityMap.getOrDefault(product.getId(), 0)) // Use quantity from Map
+                    .build();
+        }).collect(Collectors.toList());
+
+        // Return CartResponse with the built CartProduct list
+        return new CartResponse(cart.getId(), cart.getUserId(), cartProducts);
     }
+
 
     public Cart removeFromCart(String userId, String productId) {
         // Fetch the user's cart by userId

@@ -75,6 +75,9 @@ public class ProductService {
         }
     }
 
+    public List<Product> getProductsByIds(List<String> productIds) {
+        return productRepository.findByIdIn(productIds);
+    }
 
 }
 

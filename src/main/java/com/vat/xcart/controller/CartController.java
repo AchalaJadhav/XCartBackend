@@ -1,6 +1,7 @@
 package com.vat.xcart.controller;
 
 import com.vat.xcart.models.dto.CartRequest;
+import com.vat.xcart.models.dto.response.CartResponse;
 import com.vat.xcart.models.entity.Cart;
 import com.vat.xcart.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,14 +31,15 @@ public class CartController {
 
     // Get all cart items for the user
     @GetMapping("/getCart")
-    public ResponseEntity<?> getCartByUserId(@RequestBody CartRequest cartRequest) {
+    public ResponseEntity<CartResponse> getCartByUserId(@RequestParam String userId) {
         try {
-            Cart cart = cartService.getCartByUserId(cartRequest.getUserId());
-            return ResponseEntity.ok(cart);
+            CartResponse cartResponse = cartService.getCartByUserId(userId);
+            return ResponseEntity.ok(cartResponse);
         } catch (Exception e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
+            return ResponseEntity.badRequest().body(new CartResponse()); // Return empty cart on error
         }
     }
+
 
     @PostMapping("/removeFromCart")
     public ResponseEntity<?> removeFromCart(@RequestBody CartRequest cartRequest) {

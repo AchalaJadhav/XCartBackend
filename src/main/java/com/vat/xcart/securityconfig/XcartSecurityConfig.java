@@ -41,8 +41,8 @@ public class XcartSecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                                 // No Auth for following api path
                                 //Allow public access to these endpoints
-                              .requestMatchers("**").permitAll()
-//                                .requestMatchers("/auth/*","/product/getAllProducts","/product/getProduct").permitAll()
+//                              .requestMatchers("**").permitAll()
+                                .requestMatchers("/auth/*","/product/getAllProducts","/product/getProduct").permitAll()
                                 .anyRequest().authenticated() // All other requests require authentication
                 )
                 .sessionManagement(session ->
